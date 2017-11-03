@@ -1,0 +1,93 @@
+<section>
+    <div class="container-fluid">
+    <app-menuroute></app-menuroute>
+
+    <div class="row">
+        <div class="col-lg-10">
+           <h2>Routing Outputs</h2>
+           <table class="table table-sm">
+               <thead>
+                 <tr>
+                   <th>params1</th>
+                   <th>params2</th>
+                   <th>params3</th>
+                   <th>Query param1</th>
+                   <th>Query param2</th>
+                   <th>fragment</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <th scope="row">{{courseid}}</th>
+                   <td>{{coursename}}</td>
+                   <td>{{coursefee}}</td>
+                   <td>{{coursepaid}}</td>
+                   <td>{{coursejoin}}</td>
+                   <td>{{courseresult}}</td>
+                 </tr>
+               </tbody>
+             </table>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+         <div class="col-lg-10">
+            <h2>Router Items</h2>
+
+             <div class="list-group">
+                <a class="list-group-item" [routerLink]="['/services', 1,'Ui',25000]">
+                  UI Developer<span class="badge badge-pill badge-info">Add</span>
+                </a>
+                <a class="list-group-item" [routerLink]="['/services', 2,'PHP',15000]" [queryParams]="{join:'Yes',paid:'Yes'}">
+                  PHP Developer<span class="badge badge-pill badge-info">Add</span>
+                </a>
+                <a class="list-group-item" [routerLink]="['/services', 3 , 'Fullstack','40000']" [queryParams]= "{join:'No',paid:'No'}">
+                    Full-stack Developer<span class="badge badge-pill badge-info">Add</span>
+                </a>
+                <a class="list-group-item" [routerLink]="['/services', 4 , 'Graphic','20000']" [queryParams]= "{join:'yes',paid:'yes'}" fragment="confirm">
+                    Graphic Designer<span class="badge badge-pill badge-info">Add</span>
+                </a>
+                <a class="list-group-item" [routerLink]="['/services', 5 , 'UX','30000']" [queryParams]= "{join:'yes',paid:'No'}" fragment="Notconfirm">
+                  UX Designer<span class="badge badge-pill badge-info">Add</span>
+               </a>
+              </div>
+
+              <br>
+               
+                <p>Router observable Subscribe</p>
+
+                <div class="list-group">
+                  <a class="list-group-item" [routerLink]="['/route', 6 , 'sub','10000']" [queryParams]= "{join:'Yes',paid:'No'}" fragment="Maybechance">
+                    Router Subscribe<span class="badge badge-pill badge-info">Add</span>
+                 </a>
+                </div>
+
+                <br>
+
+                <div class="list-group">
+                  <a class="list-group-item" [routerLink]="['/route', 7, 'change','20000']" [queryParams]= "{join:'No',paid:'Yes'}" fragment="Confirmed">
+                    Change Router Subscribe<span class="badge badge-pill badge-info">Add</span>
+                 </a>
+                </div>
+
+              <br>
+              <p>for click re-drections other component</p>
+              <button class="btn btn-info" (click)="getparams()">Get Params</button>
+              <button class="btn btn-info" (click)="getquerys()">Get Query Params</button>
+              <button class="btn btn-info" (click)="getfragments()">Get fragments</button>
+              <button class="btn btn-info" (click)="getall()">Get All</button>
+
+              <br>
+              <br>
+              <p>for click re-drections with in the component(Router observables - Subscribe)</p>
+              <button class="btn btn-info">Get Params</button>
+              <button class="btn btn-info">Get Query Params</button>
+              <button class="btn btn-info">Get Fragments</button>
+              <button class="btn btn-info">Get All</button>
+              
+         </div>
+      </div>
+    </div>
+</section>

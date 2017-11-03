@@ -1,0 +1,70 @@
+<section>
+ <div class="container-fluid">
+
+  
+ <app-menuroute></app-menuroute>
+    
+   <div class="row">
+     <div class="col-lg-10">
+        <h2>Routing Outputs</h2>
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>params1</th>
+                <th>params2</th>
+                <th>params3</th>
+                <th>Query param1</th>
+                <th>Query param2</th>
+                <th>fragment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{courseid}}</th>
+                <td>{{coursename}}</td>
+                <td>{{coursefee}}</td>
+                <td>{{coursepaid}}</td>
+                <td>{{coursejoin}}</td>
+                <td>{{courseresult}}</td>
+              </tr>
+            </tbody>
+          </table>
+     </div>
+   </div>
+
+
+   <div class="row">
+    <div class="col-lg-10 topform">
+      <h2>Student form</h2>
+      
+        <div class="form-group">
+          <label for="email">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" [(ngModel)] = "name">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Email:</label>
+          <input type="text" class="form-control" id="email" placeholder="Enter Email" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password"[(ngModel)]="password">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Role:</label>
+          <input type="text" class="form-control" id="Role" placeholder="Enter Role" [(ngModel)]="role">
+        </div>
+       
+        <button type="submit" class="btn btn-primary" (click)="submitdetails()">Submit Details</button>
+    
+
+
+
+    </div>
+    <div class="col-lg-10">
+     
+     <app-serviceout></app-serviceout>
+    </div>
+   </div>
+ </div>
+</section>
+
