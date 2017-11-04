@@ -15,31 +15,28 @@ export class SillserviceService {
   constructor() { }
 
 
-  addskillslist(getskill){
-    this.skillDetails.push(getskill);
-  }
+    addskillslist(getskill){
+      this.skillDetails.push(getskill);
+    }
 
-  getSkillDetails(){
-    return this.skillDetails;
-  }
-
-  removeskilllist(rid){
-    this.skillDetails.splice(rid-1, 1);
-  }
-
-  viewskills(vid){
+    viewskills(vid){
     this.viewstudentskills = this.skillDetails[vid-1];
-  }
+    }
 
-  editskills(eid){
+    removekills(rid){
+      this.skillDetails.splice(rid-1, 1);
+      console.log(rid-1);
+    }
+
+    editskills(eid){
     this.editstudentskills = this.skillDetails[eid-1];
-  }
+    }
 
-  reeditskills(reskilss,reids){
-    console.log(reskilss);
+    reeditskills(reskilss,reids){
+    //console.log(reskilss);
     this.skillDetails[reids-1] = reskilss;
-  }
+    }
 
-
+   
 
 }

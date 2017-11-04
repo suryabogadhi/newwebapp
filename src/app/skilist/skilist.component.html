@@ -1,5 +1,7 @@
 <section>
   <div class="container-fluid">
+ 
+   
   <app-menuroute></app-menuroute>
     <div class="row">
       <div class="col-lg-6">
@@ -24,16 +26,19 @@
                    </tr>
                  </thead>
                  <tbody>
-                     <tr *ngFor= "let data of skill; let i = index">
-                         <td>{{i+1}}</td>
-                         <td>{{data.name}}</td>
-                         <td>
-                             <button class="btn btn-outline-success" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'edit'}">Edit</button>
-                             <button class="btn btn-outline-danger" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'remove'}">Remove</button>
-                             <button class="btn btn-outline-primary" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'view'}">View</button>
-                         </td>
-                     </tr>
-                 </tbody>
+ 
+ 
+                         <tr *ngFor= "let data of skill; let i = index">
+                             <td>{{i+1}}</td>
+                             <td>{{data.name}}</td>
+                             <td>
+                                 <button class="btn btn-outline-success" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'edit'}">Edit</button>
+                                 <button class="btn btn-outline-danger" [routerLink]="['/skillist']"   [queryParams]="{skilid:i+1,status:'remove'}">Remove</button>
+                                 <button class="btn btn-outline-primary" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'view'}">View</button>
+                             </td>
+                         </tr>
+ 
+                       </tbody>
                </table>
              </div>
            </div>
@@ -50,9 +55,26 @@
               <br>
             <p class="card-text">{{outview.skilldes}}</p>
 
-          </div>
+
+
+  
+    <div class="col-lg-6 topform">
+    
+      <div class="card" *ngIf="getstatus=='view'">
+        <h4 class="card-header">{{outview.name}}</h4>
+        <div class="card-body">
+          <h4 class="card-title">{{outview.skill}}</h4>
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': outview.skillrate*10+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{outview.skillrate*10}}%</div>
+            </div>
+            <br>
+          <p class="card-text">{{outview.skilldes}}</p>
+          
         </div>
-        <div class="card" *ngIf="getstatus==='edit'">
+      </div>
+      
+
+       <div class="card" *ngIf="getstatus=='edit'">
             <h4 class="card-header">Edit Skills</h4>
             <div class="card-body">
               <div class="form-group">
