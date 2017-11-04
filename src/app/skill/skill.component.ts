@@ -8,19 +8,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./skill.component.css']
 })
 export class SkillComponent implements OnInit {
-  
+
 
   name = "";
   skill = "";
   skillrate = "";
   skilldes = "";
 
-  //nam = this.name;
-  //skil = this.skill;
-  //srate = this.skillrate;
-  //sdes  = this.skilldes;
-
-  
   constructor(private inskillservice:SillserviceService, private router:Router, private routpath:ActivatedRoute) { }
 
   ngOnInit() {
