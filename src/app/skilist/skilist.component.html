@@ -39,7 +39,7 @@
                              <td>{{data.name}}</td>
                              <td>
                                  <button class="btn btn-outline-success" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'edit'}">Edit</button>
-                                 <button class="btn btn-outline-danger" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'remove'}">Remove</button>
+                                 <button class="btn btn-outline-danger" [routerLink]="['/skillist']"   [queryParams]="{skilid:i+1,status:'remove'}">Remove</button>
                                  <button class="btn btn-outline-primary" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'view'}">View</button>
                              </td>
                          </tr>
@@ -57,10 +57,10 @@
 
 
 
-
+  
     <div class="col-lg-6 topform">
-    {{getid}}
-      <div class="card">
+    
+      <div class="card" *ngIf="getstatus=='view'">
         <h4 class="card-header">{{outview.name}}</h4>
         <div class="card-body">
           <h4 class="card-title">{{outview.skill}}</h4>
@@ -74,7 +74,7 @@
       </div>
       
 
-       <div class="card">
+       <div class="card" *ngIf="getstatus=='edit'">
             <h4 class="card-header">Edit Skills</h4>
             <div class="card-body">
                     <div class="form-group">

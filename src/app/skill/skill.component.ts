@@ -15,10 +15,10 @@ export class SkillComponent implements OnInit {
   skillrate = "";
   skilldes = "";
 
-  //nam = this.name;
-  //skil = this.skill;
-  //srate = this.skillrate;
-  //sdes  = this.skilldes;
+  nam = this.name;
+  skil = this.skill;
+  srate = this.skillrate;
+  sdes  = this.skilldes;
 
   
   constructor(private inskillservice:SillserviceService, private router:Router, private routpath:ActivatedRoute) { }
