@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { SillserviceService } from '../sillservice.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-skill',
+  templateUrl: './skill.component.html',
+  styleUrls: ['./skill.component.css']
+})
+export class SkillComponent implements OnInit {
+
+
+  name = "";
+  skill = "";
+  skillrate = "";
+  skilldes = "";
+
+<<<<<<< HEAD
+=======
+  nam = this.name;
+  skil = this.skill;
+  srate = this.skillrate;
+  sdes  = this.skilldes;
+
+  
+>>>>>>> 0ccf2d1f2a9d81872e808dfc8d1aec9bea1838c8
+  constructor(private inskillservice:SillserviceService, private router:Router, private routpath:ActivatedRoute) { }
+
+  ngOnInit() {
+  }
+
+  submitskills(){
+    this.router.navigate(['/skillist',this.name,this.skill,this.skillrate,this.skilldes]);
+  }
+
+
+
+}
