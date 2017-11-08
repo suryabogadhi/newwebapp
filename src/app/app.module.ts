@@ -14,12 +14,15 @@ import { OneserviceService } from './oneservice.service';
 import { SkillComponent } from './skill/skill.component';
 import { SkilistComponent } from './skilist/skilist.component';
 import { SillserviceService } from './sillservice.service';
+import { SkillviewComponent } from './skilist/skillview/skillview.component';
+import { SkilleditComponent } from './skilist/skilledit/skilledit.component';
+import { SkilltestComponent } from './skilist/skilltest/skilltest.component';
 
 
 const myrouteurls :Routes = [
- 
-  {path:'',component:HomeComponent},
 
+  {path:'',component:HomeComponent},
+  // {path:'', redirectTo:'services', pathMatch:'full'},
   {path:'services',component:ServicesComponent},
   {path:'services/:cid',component:ServicesComponent},
   {path:'services/:cid/:cname',component:ServicesComponent},
@@ -31,18 +34,16 @@ const myrouteurls :Routes = [
   {path:'route/:cid/:cname/:cfee',component:RouteComponent},
 
   {path:'skill',component:SkillComponent},
-  
-  {path:'skillist',component:SkilistComponent},
-  {path:'skillist/:name/:',component:SkilistComponent},
-  {path:'skillist/:name/:sname',component:SkilistComponent},
-  {path:'skillist/:name/:sname/:srate',component:SkilistComponent},
-  {path:'skillist/:name/:sname/:srate/:sdes',component:SkilistComponent}
-
-
-
-]
-
-
+  {path:'skillist',component:SkilistComponent, children:[
+    {path:':name',component:SkillviewComponent},
+    {path:'edit/:name',component:SkilleditComponent},
+    {path:'view/:name',component:SkilltestComponent}
+  ]}
+  // {path:'skillist/:name',component:SkilistComponent},
+  // {path:'skillist/:name/:sname',component:SkilistComponent},
+  // {path:'skillist/:name/:sname/:srate',component:SkilistComponent},
+  // {path:'skillist/:name/:sname/:srate/:sdes',component:SkilistComponent}
+];
 
 
 @NgModule({
@@ -56,6 +57,9 @@ const myrouteurls :Routes = [
     ServiceoutComponent,
     SkillComponent,
     SkilistComponent,
+    SkillviewComponent,
+    SkilleditComponent,
+    SkilltestComponent,
   ],
   imports: [
     BrowserModule,
