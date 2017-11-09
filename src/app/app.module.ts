@@ -14,6 +14,10 @@ import { OneserviceService } from './oneservice.service';
 import { SkillComponent } from './skill/skill.component';
 import { SkilistComponent } from './skilist/skilist.component';
 import { SillserviceService } from './sillservice.service';
+import { CustomdirectiveComponent } from './customdirective/customdirective.component';
+import { MaindirectiveDirective } from './maindirective.directive';
+import { SkilleditComponent } from './skilist/skilledit/skilledit.component';
+import { SkillviewComponent } from './skilist/skillview/skillview.component';
 
 
 const myrouteurls :Routes = [
@@ -32,13 +36,17 @@ const myrouteurls :Routes = [
 
   {path:'skill',component:SkillComponent},
   
-  {path:'skillist',component:SkilistComponent},
-  {path:'skillist/:name/:',component:SkilistComponent},
-  {path:'skillist/:name/:sname',component:SkilistComponent},
-  {path:'skillist/:name/:sname/:srate',component:SkilistComponent},
-  {path:'skillist/:name/:sname/:srate/:sdes',component:SkilistComponent}
+  {path:'skillist',component:SkilistComponent , children:[
 
+    {path:':sids/edit',component:SkilleditComponent},
+    {path:':sids/view',component:SkillviewComponent},
+    //{path:':sids/remove',component:SkilistComponent},
+  ]},
+  
+  {path:'skillist/:name/:sname/:srate/:sdes',component:SkilistComponent},
+  {path:'skillist/:sids/remove',component:SkilistComponent},
 
+  {path:'directive',component:CustomdirectiveComponent} 
 
 ]
 
@@ -56,6 +64,10 @@ const myrouteurls :Routes = [
     ServiceoutComponent,
     SkillComponent,
     SkilistComponent,
+    CustomdirectiveComponent,
+    MaindirectiveDirective,
+    SkilleditComponent,
+    SkillviewComponent,
   ],
   imports: [
     BrowserModule,

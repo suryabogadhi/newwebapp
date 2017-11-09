@@ -1,0 +1,13 @@
+
+<div class="card">
+  <h4 class="card-header">{{outview.name}}</h4>
+  <div class="card-body">
+    <h4 class="card-title">{{outview.skill}}</h4>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" [ngStyle]="{'width': outview.skillrate*10+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{outview.skillrate*10}}%</div>
+      </div>
+      <br>
+    <p class="card-text">{{outview.skilldes}}</p>
+    
+  </div>
+</div>
