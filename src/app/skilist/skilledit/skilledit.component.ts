@@ -37,6 +37,18 @@ export class SkilleditComponent implements OnInit {
 
   editingskills(){
     this.skilleditservices.reeditskills({name:this.list_name,skill:this.list_skill,skillrate:this.list_skillrate,skilldes:this.list_skilldes},this.skillid);
-    this.route.navigate(['/skillist']);
+    // this.route.navigate(['/skillist',this.skillid,'view'], {queryParamsHandling:'preserve'});
+    this.route.navigate(
+      ['/skillist',this.skillid,'view'],
+      {
+              queryParams:{
+                        'err':'no',
+                        'err2':'nope',
+                        'err3':'nope3',
+              },
+              queryParamsHandling:'merge',
+              preserveFragment:true
+            }
+      );
   }
 }

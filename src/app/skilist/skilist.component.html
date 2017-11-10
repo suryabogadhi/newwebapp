@@ -44,7 +44,7 @@
                   <button class="btn btn-outline-primary" [routerLink]="['/skillist',i+1,'view']">View</button>
                 </td>
                 <td>
-                  <button class="btn btn-outline-success" [routerLink]="['/skillist',i+1,'edit']">Edit</button>
+<button class="btn btn-outline-success" [routerLink]="['/skillist',i+1,'edit']" [queryParams]="{status:'approved'}" fragment="testing">Edit</button>
                 </td>
                 <td>
                   <button class="btn btn-outline-danger" [routerLink]="['/skillist',i+1,'remove']">Remove</button>
