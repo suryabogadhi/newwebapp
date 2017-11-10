@@ -9,10 +9,64 @@
              <div class="col col-xs-6">
                <h3 class="panel-title">Student Skills List</h3>
              </div>
+<<<<<<< HEAD
              <div class="col col-xs-6 text-right">
                <button type="button" class="btn btn-sm btn-primary btn-create" [routerLink]="['/skill']">Create skills</button>
+=======
+             <div class="panel-body">
+               <table class="table table-striped table-bordered table-list">
+                 <thead>
+                   <tr>
+                       <th>Sno</th>
+                       <th>Name</th>
+                       <th>view</th>
+                       <th>Edit</th>
+                       <th>Remove</th>
+                       
+                   </tr> 
+                 </thead>
+                 <tbody>
+ 
+ 
+                         <tr *ngFor= "let data of skill; let i = index">
+                             <td>{{i+1}}</td>
+                             <td>{{data.name}}</td>
+                             <td>
+                               <button class="btn btn-outline-primary" [routerLink]="['/skillist',i+1,'view']">View</button>
+                             </td>
+                             <td>
+                                <button class="btn btn-outline-success" [routerLink]="['/skillist',i+1,'edit']">Edit</button>
+                             </td>
+                             <td>
+                                 <button class="btn btn-outline-danger" [routerLink]="['/skillist',i+1,'remove']">Remove</button>
+                             </td>
+
+
+                             <!-- <td>
+                              <button class="btn btn-outline-primary" [routerLink]="['/skillist',i+1,'view']"  [queryParams]="{skilid:i+1,status:'view'}">View</button>
+                            </td>
+                            <td>
+                               <button class="btn btn-outline-success" [routerLink]="['/skillist']"  [queryParams]="{skilid:i+1,status:'edit'}">Edit</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-danger" [routerLink]="['/skillist']"   [queryParams]="{skilid:i+1,status:'remove'}">Remove</button>
+                            </td> -->
+
+
+
+
+
+
+
+                         </tr>
+ 
+                       </tbody>
+               </table>
+           
+>>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
              </div>
            </div>
+<<<<<<< HEAD
          </div>
          <div class="panel-body">
            <table class="table table-striped table-bordered table-list">
@@ -45,6 +99,27 @@
       <div class="col-lg-6 topform">
           <router-outlet></router-outlet>
       </div>
+=======
+ 
+     
+
+     </div>
+
+
+
+  
+    <div class="col-lg-6 topform">
+      <router-outlet></router-outlet>
+     <!-- 
+          <app-skillview></app-skillview>
+          <app-skilledit></app-skilledit>
+     -->
+
+    </div>
+
+
+    
+>>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
     </div>
   </div>
 </section>

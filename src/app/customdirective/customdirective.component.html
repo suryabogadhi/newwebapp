@@ -1,0 +1,55 @@
+<section>
+  <div class="container-fluid">
+  <app-menuroute></app-menuroute>
+
+  <div class="row">
+      <div class="col-lg-11">
+         <h2>Directives</h2>
+         <h5>Structural Directives</h5>
+         
+         <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Sno</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Total Income</th>
+              <th>Expenditures</th>
+              <th>Savings</th>
+              <th>Ex-Rate</th>
+              <th>sa-Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let employe of employesslist; let i=index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{employe.name}}</td>
+              <td>{{employe.email}}</td>
+              <td>{{employe.income}}</td>
+              <td>{{employe.expenditure}}</td>
+              <td>{{employe.saving}}</td>
+              <td>{{employe.expendrate}}</td>
+              <td>{{employe.savingrate}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-lg-11">
+        <h2>Custom Directives</h2>
+           <div appMaindirective>
+             <p>Hai this is custom directive</p>
+          </div>
+      </div>
+    </div>
+
+
+
+  
+  </div>
+</section>
