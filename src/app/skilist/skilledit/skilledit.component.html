@@ -1,77 +1,36 @@
-<<<<<<< HEAD
-<div class="card" *ngIf="getstatus=='edit'">
-  <h4 class="card-header">Edit Skills</h4>
-  <div class="card-body">
-    <div class="form-group">
-      <label for="name">Student name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter Name" [(ngModel)] = "list_name">
-    </div>
-    <div class="form-group">
-      <label for="email">Student skill:</label>
-      <input type="text" class="form-control" id="email" placeholder="Enter Skill" [(ngModel)]="list_skill">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Skill rating:</label>
-      <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="list_skillrate">
-        <option value="">Select Rating</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Skill description:</label>
-      <textarea name="" cols="30" rows="5" class="form-control" placeholder="Enter description" [(ngModel)]="list_skilldes"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="editingskills()" >Edit Details</button>
-
-  </div>
-</div>
-
-<div>this is sub edit</div>
-=======
-
 <div class="card">
-            <h4 class="card-header">Edit Skills</h4>
-            <div class="card-body">
+      <h4 class="card-header">Edit Skills</h4>
+      <div class="card-body">
+              <div class="form-group">
+                      <label for="email">Student name:</label>
+                      <input type="text" class="form-control" id="name" placeholder="Enter Name" [(ngModel)] = "list_name">
+                    </div>
                     <div class="form-group">
-                            <label for="email">Student name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter Name" [(ngModel)] = "list_name">
-                          </div>
-                          <div class="form-group">
-                            <label for="pwd">Student skill:</label>
-                            <input type="text" class="form-control" id="email" placeholder="Enter Skill" [(ngModel)]="list_skill">
-                          </div>
-                          <div class="form-group">
-                            <label for="pwd">Skill rating:</label>
-                            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="list_skillrate">
-                               <option value="">Select Rating</option>
-                               <option value="1">1</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                               <option value="4">4</option>
-                               <option value="5">5</option>
-                               <option value="6">6</option>
-                               <option value="7">7</option>
-                               <option value="8">8</option>
-                               <option value="9">9</option>
-                               <option value="10">10</option>
-                             </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="pwd">Skill description:</label>
-                           <textarea name="" cols="30" rows="5" class="form-control" placeholder="Enter description" [(ngModel)]="list_skilldes"></textarea>
-                          </div>
-                         
-                        <button type="submit" class="btn btn-primary" (click)="editingskills()" >Edit Details</button>
-              
-            </div>
-       </div>
->>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
+                      <label for="pwd">Student skill:</label>
+                      <input type="text" class="form-control" id="email" placeholder="Enter Skill" [(ngModel)]="list_skill">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Skill rating:</label>
+                      <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="list_skillrate">
+                         <option value="">Select Rating</option>
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                         <option value="6">6</option>
+                         <option value="7">7</option>
+                         <option value="8">8</option>
+                         <option value="9">9</option>
+                         <option value="10">10</option>
+                       </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Skill description:</label>
+                     <textarea name="" cols="30" rows="5" class="form-control" placeholder="Enter description" [(ngModel)]="list_skilldes"></textarea>
+                    </div>
+
+                  <button type="submit" class="btn btn-primary" (click)="editingskills()" >Edit Details</button>
+
+      </div>
+ </div>

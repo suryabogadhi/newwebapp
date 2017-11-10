@@ -13,52 +13,13 @@ import { OneserviceService } from './oneservice.service';
 import { SkillComponent } from './skill/skill.component';
 import { SkilistComponent } from './skilist/skilist.component';
 import { SillserviceService } from './sillservice.service';
-<<<<<<< HEAD
 import { SkillviewComponent } from './skilist/skillview/skillview.component';
 import { SkilleditComponent } from './skilist/skilledit/skilledit.component';
 import { SkilltestComponent } from './skilist/skilltest/skilltest.component';
 import { AppRoutesModule } from './approutes.module';
 import { NotfoundComponent } from './notfound/notfound.component';
-=======
 import { CustomdirectiveComponent } from './customdirective/customdirective.component';
 import { MaindirectiveDirective } from './maindirective.directive';
-import { SkilleditComponent } from './skilist/skilledit/skilledit.component';
-import { SkillviewComponent } from './skilist/skillview/skillview.component';
-
-
-const myrouteurls :Routes = [
- 
-  {path:'',component:HomeComponent},
-
-  {path:'services',component:ServicesComponent},
-  {path:'services/:cid',component:ServicesComponent},
-  {path:'services/:cid/:cname',component:ServicesComponent},
-  {path:'services/:cid/:cname/:cfee',component:ServicesComponent},
-
-  {path:'route',component:RouteComponent},
-  {path:'route/:cid',component:RouteComponent},
-  {path:'route/:cid/:cname',component:RouteComponent},
-  {path:'route/:cid/:cname/:cfee',component:RouteComponent},
-
-  {path:'skill',component:SkillComponent},
-  
-  {path:'skillist',component:SkilistComponent , children:[
-
-    {path:':sids/edit',component:SkilleditComponent},
-    {path:':sids/view',component:SkillviewComponent},
-    //{path:':sids/remove',component:SkilistComponent},
-  ]},
-  
-  {path:'skillist/:name/:sname/:srate/:sdes',component:SkilistComponent},
-  {path:'skillist/:sids/remove',component:SkilistComponent},
-
-  {path:'directive',component:CustomdirectiveComponent} 
-
-]
-
-
-
->>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
 
 @NgModule({
   declarations: [
@@ -71,17 +32,12 @@ const myrouteurls :Routes = [
     ServiceoutComponent,
     SkillComponent,
     SkilistComponent,
-<<<<<<< HEAD
     SkillviewComponent,
     SkilleditComponent,
     SkilltestComponent,
     NotfoundComponent,
-=======
     CustomdirectiveComponent,
     MaindirectiveDirective,
-    SkilleditComponent,
-    SkillviewComponent,
->>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
   ],
   imports: [
     BrowserModule,

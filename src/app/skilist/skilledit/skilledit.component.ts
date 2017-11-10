@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { SillserviceService } from '../../sillservice.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
->>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
 
 @Component({
   selector: 'app-skilledit',
@@ -12,20 +9,13 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class SkilleditComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-=======
   skillid = "";
 
   list_name = "";
   list_skill = "";
   list_skillrate = "";
   list_skilldes = "";
-  
+
 
   constructor(private skilleditservices:SillserviceService, private route:Router,private skillrouter:ActivatedRoute) { }
 
@@ -43,18 +33,10 @@ export class SkilleditComponent implements OnInit {
       this.list_skillrate = this.skilleditservices.editstudentskills['skillrate'];
       this.list_skilldes  = this.skilleditservices.editstudentskills['skilldes'];
      });
-
-
   }
 
   editingskills(){
     this.skilleditservices.reeditskills({name:this.list_name,skill:this.list_skill,skillrate:this.list_skillrate,skilldes:this.list_skilldes},this.skillid);
     this.route.navigate(['/skillist']);
   }
-
-
-
-
-
->>>>>>> 874d33413539268b4784c52c84fa4e812d8aafeb
 }

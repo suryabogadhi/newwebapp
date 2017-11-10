@@ -10,6 +10,7 @@ import {SkillviewComponent} from "./skilist/skillview/skillview.component";
 import {SkilleditComponent} from "./skilist/skilledit/skilledit.component";
 import {SkilltestComponent} from "./skilist/skilltest/skilltest.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
+import { CustomdirectiveComponent } from './customdirective/customdirective.component';
 
 const myrouteurls : Routes = [
   {path:'',component:HomeComponent},
@@ -26,10 +27,15 @@ const myrouteurls : Routes = [
 
   {path:'skill',component:SkillComponent},
   {path:'skillist',component:SkilistComponent, children:[
-    {path:':name',component:SkillviewComponent},
-    {path:'edit/:name',component:SkilleditComponent},
-    {path:'view/:name',component:SkilltestComponent}
+    // {path:':name',component:SkillviewComponent},
+    {path:':sids/edit',component:SkilleditComponent},
+    {path:':sids/view',component:SkillviewComponent}
   ]},
+
+  {path:'skillist/:name/:sname/:srate/:sdes',component:SkilistComponent},
+  {path:'skillist/:sids/remove',component:SkilistComponent},
+
+  {path:'directive',component:CustomdirectiveComponent},
   {path:'error', component: NotfoundComponent},
   {path:'**', redirectTo:'error'}
   // {path:'skillist/:name',component:SkilistComponent},
