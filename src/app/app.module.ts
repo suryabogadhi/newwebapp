@@ -20,6 +20,7 @@ import { AppRoutesModule } from './approutes.module';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CustomdirectiveComponent } from './customdirective/customdirective.component';
 import { MaindirectiveDirective } from './maindirective.directive';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MaindirectiveDirective } from './maindirective.directive';
     NotfoundComponent,
     CustomdirectiveComponent,
     MaindirectiveDirective,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,

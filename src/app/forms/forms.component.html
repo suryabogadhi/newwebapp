@@ -1,0 +1,63 @@
+<section>
+  <div class="container-fluid">
+    <app-menuroute></app-menuroute>
+    <div class="row">
+      <div class="col-lg-11">
+        <form (ngSubmit)="submitForm()" #myform="ngForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" placeholder="Enter email" ngModel name="email" #refEmail="ngModel" required email>
+            <p class="form-text text-danger" *ngIf="!refEmail.valid&&refEmail.touched">
+                Please add email
+            </p>
+            <p *ngIf="custEmail">Add valid Email</p>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input (input)="checkpass()" type="password" class="form-control" placeholder="Password" name="password" ngModel required #refPass="ngModel">
+            <p class="form-text text-danger" *ngIf="refPass.invalid&&refPass.touched">
+                Please add password!
+            </p>
+            <p>{{pass}}</p>
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect1">Example select</label>
+            <select class="form-control" name="options" ngModel required #refOpt="ngModel">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <p class="form-text text-danger" *ngIf="refOpt.invalid&&refOpt.touched">
+                Please select option!
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="exampleTextarea">Example textarea</label>
+            <textarea class="form-control" rows="3" name="description" ngModel required  #refDesc="ngModel"></textarea>
+            <p class="form-text text-danger" *ngIf="refDesc.invalid&&refDesc.touched">
+                Please add description!
+            </p>
+          </div>
+          <!-- <fieldset class="form-group">
+            <legend>Radio buttons</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Option one is this and that&mdash;be sure to include why it's great
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                Option two can be something else and selecting it will deselect option one
+              </label>
+            </div>
+          </fieldset> -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
