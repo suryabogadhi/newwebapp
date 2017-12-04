@@ -4,25 +4,36 @@
     <div class="row">
       <div class="col-lg-11">
         <form (ngSubmit)="submitForm()" #myform="ngForm">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" placeholder="Enter email" ngModel name="email" #refEmail="ngModel" required email>
-            <p class="form-text text-danger" *ngIf="!refEmail.valid&&refEmail.touched">
+
+          <div ngModelGroup="mygroup" #mygroup = "ngModelGroup">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" placeholder="Enter email" ngModel name="email" #refEmail="ngModel" required email>
+              <p class="form-text text-danger" *ngIf="!refEmail.valid&&refEmail.touched">
                 Please add email
-            </p>
-            <p *ngIf="custEmail">Add valid Email</p>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input (input)="checkpass()" type="password" class="form-control" placeholder="Password" name="password" ngModel required #refPass="ngModel">
-            <p class="form-text text-danger" *ngIf="refPass.invalid&&refPass.touched">
+              </p>
+              <p *ngIf="custEmail">Add valid Email</p>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input (input)="checkpass()" type="password" class="form-control" placeholder="Password" name="password" ngModel required #refPass="ngModel">
+              <p class="form-text text-danger" *ngIf="refPass.invalid&&refPass.touched">
                 Please add password!
-            </p>
-            <p>{{pass}}</p>
+              </p>
+              <p>{{pass}}</p>
+            </div>
+
+
+            <p *ngIf="!mygroup.valid"> Please fill personal details!</p>
           </div>
+
+
+
+
           <div class="form-group">
             <label for="exampleSelect1">Example select</label>
-            <select class="form-control" name="options" ngModel required #refOpt="ngModel">
+            <select class="form-control" name="options" [ngModel]="myoptions" required #refOpt="ngModel">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -40,6 +51,27 @@
                 Please add description!
             </p>
           </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="validationServer03">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                [ngClass]="{'is-invalid':emailValidate,'is-valid':success}"
+                placeholder="Email"
+                name="email2"
+                required
+                email
+                #refEmail2 = "ngModel"
+                [(ngModel)] = "myemail"
+                (input)="checkEmail()"
+                >
+              <div class="invalid-feedback">
+                Please provide valid email!
+              </div>
+            </div>
+            <p>you are typing {{myemail}}</p>
+          </div>
           <!-- <fieldset class="form-group">
             <legend>Radio buttons</legend>
             <div class="form-check">
@@ -56,6 +88,8 @@
             </div>
           </fieldset> -->
           <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" (click)="filluptheform()" class="btn btn-primary">Autofill</button>
+          <button type="button" (click)="resetmyfrom()" class="btn btn-primary">Reset</button>
         </form>
       </div>
     </div>
