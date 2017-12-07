@@ -15,10 +15,22 @@ export class FormsComponent implements OnInit {
   success = false;
   myoptions = 2;
 
+  allTechnologies =[
+    {techId:100,techName:'a'},
+    {techId:101,techName:'b'},
+    {techId:102,techName:'c'},
+    {techId:103,techName:'d'}
+  ];
+
+  user:object;
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.mynewform);
+    this.user =  {
+      technologies : []
+    };
+
   }
 
   // submitForm(formdata){
@@ -37,7 +49,17 @@ export class FormsComponent implements OnInit {
     //   email2:"kvarma@gmail.com"
     // });
 
-    this.mynewform.form.setValue({
+    // this.mynewform.form.setValue({
+    //   mygroup:{
+    //     email:"kvarma063@gmail.com",
+    //     password:"testing"
+    //   },
+    //   options:2,
+    //   description:"checking",
+    //   email2:"kvarma@gmail.com"
+    // });
+
+    this.mynewform.form.patchValue({
       mygroup:{
         email:"kvarma063@gmail.com",
         password:"testing"
@@ -47,18 +69,20 @@ export class FormsComponent implements OnInit {
       email2:"kvarma@gmail.com"
     });
 
-    // this.mynewform.form.patchValue({
-    //   mygroup:{
-    //     email:"kvarma063@gmail.com",
-    //     password:"testing"
-    //   }
-    // });
+    this.user =  {
+      technologies : [
+        {techId:100,techName:'a'},
+        {techId:101,techName:'b'}
+      ]
+    };
+    console.log(this.mynewform);
+
   }
 
   submitForm(){
-    if(this.mynewform.value.mygroup.email===""){
-      this.custEmail = true;
-    }
+    // if(this.mynewform.value.mygroup.email===""){
+    //   this.custEmail = true;
+    // }
 
     console.log(this.mynewform);
   }
@@ -75,6 +99,11 @@ export class FormsComponent implements OnInit {
 
   resetmyfrom(){
     this.mynewform.reset();
+  }
+
+  compareTech(t1, t2): boolean {
+    console.log(t1.techId +'-' + t2.techId);
+    return t1 && t2 ? t1.techId === t2.techId : t1 === t2;
   }
 
 }
