@@ -41,7 +41,7 @@
           </div>
 
           <div class="form-group">
-            <select multiple name="selectedTechs" [compareWith]="compareTech" [ngModel]="user.technologies" required #selectedTechs="ngModel" class="form-control">
+            <select multiple name="selectedTechs" [compareWith]="compareTech"  [ngModel]="technologies" required #selectedTechs="ngModel" class="form-control">
               <option *ngFor="let tech of allTechnologies" [ngValue]="tech">
                 {{ tech.techName }}
               </option>

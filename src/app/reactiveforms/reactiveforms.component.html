@@ -1,0 +1,49 @@
+<section>
+  <div class="container-fluid">
+    <app-menuroute></app-menuroute>
+    <div class="row">
+      <div class="col-lg-11">
+        <form (ngSubmit)="submitForm()" [formGroup]="registerForm">
+
+          <div formGroupName="logindata">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" (input)="showemail()" ngClass="form-control" placeholder="Enter email" formControlName="email">
+            </div>
+            <p>{{myemail}}</p>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            </div>
+          </div>
+
+
+          <p *ngIf="registerForm.get('logindata.password').invalid&&registerForm.get('logindata.password').touched">Please Add password</p>
+          <div class="form-group">
+            <label for="exampleTextarea">Example textarea</label>
+            <textarea class="form-control" rows="3" formControlName="description"></textarea>
+          </div>
+
+
+          <fieldset class="form-group">
+            <legend>Radio buttons</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="gender" id="optionsRadios1" value="male">Male
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="gender" id="optionsRadios2" value="female">Female
+              </label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" (click)="autofillForm()" class="btn btn-primary">Autofill</button>
+          <button type="button" (click)="resetForm()" class="btn btn-primary">Reset</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

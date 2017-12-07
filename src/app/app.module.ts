@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +21,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { CustomdirectiveComponent } from './customdirective/customdirective.component';
 import { MaindirectiveDirective } from './maindirective.directive';
 import { FormsComponent } from './forms/forms.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 @NgModule({
   declarations: [
@@ -40,10 +41,12 @@ import { FormsComponent } from './forms/forms.component';
     CustomdirectiveComponent,
     MaindirectiveDirective,
     FormsComponent,
+    ReactiveformsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutesModule
   ],
   providers: [OneserviceService,SillserviceService],

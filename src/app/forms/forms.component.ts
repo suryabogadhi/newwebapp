@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
+
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
@@ -23,6 +24,7 @@ export class FormsComponent implements OnInit {
   ];
 
   user:object;
+  technologies:Array<any>;
 
   constructor() { }
 
@@ -69,12 +71,12 @@ export class FormsComponent implements OnInit {
       email2:"kvarma@gmail.com"
     });
 
-    this.user =  {
-      technologies : [
+    this.technologies = [
         {techId:100,techName:'a'},
-        {techId:101,techName:'b'}
-      ]
-    };
+        {techId:101,techName:'b'},
+        {techId:103,techName:'d'}
+      ];
+
     console.log(this.mynewform);
 
   }
@@ -102,7 +104,7 @@ export class FormsComponent implements OnInit {
   }
 
   compareTech(t1, t2): boolean {
-    console.log(t1.techId +'-' + t2.techId);
+    // console.log(t1.techId +'-' + t2.techId);
     return t1 && t2 ? t1.techId === t2.techId : t1 === t2;
   }
 

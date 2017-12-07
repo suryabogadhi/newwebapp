@@ -12,10 +12,12 @@ import {SkilltestComponent} from "./skilist/skilltest/skilltest.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
 import { CustomdirectiveComponent } from './customdirective/customdirective.component';
 import { FormsComponent } from "./forms/forms.component";
+import {ReactiveformsComponent} from "./reactiveforms/reactiveforms.component";
 
 const myrouteurls : Routes = [
   {path:'',component:HomeComponent},
   {path:'forms',component:FormsComponent},
+  {path:'reactiveforms',component: ReactiveformsComponent},
   // {path:'', redirectTo:'services', pathMatch:'full'},
   {path:'services',component:ServicesComponent},
   {path:'services/:cid',component:ServicesComponent},
