@@ -104,8 +104,10 @@ export class FormsComponent implements OnInit {
   }
 
   compareTech(t1, t2): boolean {
-    // console.log(t1.techId +'-' + t2.techId);
-    return t1 && t2 ? t1.techId === t2.techId : t1 === t2;
+    console.log(t1.techId + '-' + t2.techId);
+    console.log(t1.techId === t2.techId);
+    //return t1 && t2 ? t1.techId === t2.techId : t1 === t2;
+    return t1.techId === t2.techId;
   }
 
 }
